@@ -1,0 +1,61 @@
+/* CSS custom properties setup - when they are used, fallback values will be included */
+
+:root {
+  /* Colors */
+  --clr-neutral-900: hsl(255, 100%, 100%);
+  --clr-neutral-100: hsl(0, 0%, 0%);
+
+  /* Typography */
+
+  --fontstack-system-sans: ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --fontstack-system-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+/* Remove all the default margin and paddings + use a better box sizing model */
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* 'Fix' font weights on MacOS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
+}
+
+body {
+  color: var(--clr-neutral-900, white);
+  background: var(--clr-neutral-100, black);
+  font-family: var(--fontstack-system-sans, system-ui);
+  /* Increase line-height for accessibility */
+  line-height: 1.5;
+}
+
+/* Ensure headings on the page have slightly more balanced text-wrapping to avoid having widows */
+
+:where(h1, h2, h3, h4, h5, h6) {
+  text-wrap: balance;
+}
+
+/* Removes whitespace from images being treated as inline elements, and makes any alt text on the page distinguishable */
+
+img {
+  display: block;
+  max-width: 100%;
+  font-style: italic;
+}
+
+/* If a user has not selected prefers-reduced-motion, set up smooth scrolling on any elements with a target */
+
+@media only screen and (prefers-reduced-motion: no-preference) {
+  :has(:target) {
+    scroll-behavior: smooth;
+  }
+}
