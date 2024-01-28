@@ -1,0 +1,43 @@
+.container {
+  --container-max-width: 1440px;
+  --container-padding-inline: 2rem;
+  /* 
+  Alterantive CSS to using a max-width container using locally scoped custom properties
+  The code below evaluates to width: min(1440px, calc(100% - 3rem)
+  This means that the width will be the minimum value between the two, so on larger screens the width will be the equivalent to a max-width
+  and anything lower will be set to 100% - 3rem (1.5rem of 'padding' on either side)
+  */
+  width: min(
+    var(--container-max-width),
+    calc(100% - calc(var(--container-padding-inline) * 2))
+  );
+  margin: 0 auto;
+  padding-block: 5rem;
+  /* Set up as a flex container to have a consistent gap between content */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: 2rem;
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+}
+
+.button {
+  border-radius: 0.5rem;
+  /* Reset default styles */
+  border: none;
+  appearance: none;
+  /* Set a better color scheme */
+  background: var(--clr-neutral-100, black);
+  color: var(--clr-neutral-900, white);
+  /* Basic typography changes */
+  font-weight: 700;
+  font-size: 1.5rem;
+  font-family: var(--fontstack-system-mono);
+  cursor: pointer;
+  /* Size changes */
+  padding: 1rem 1.5rem;
+}
