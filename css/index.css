@@ -25,6 +25,13 @@
   text-underline-offset: 0.5rem;
 }
 
+.buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
 .button {
   border-radius: 0.5rem;
   /* Reset default styles */
@@ -39,5 +46,7 @@
   font-family: var(--fontstack-system-mono);
   cursor: pointer;
   /* Size changes */
+  max-width: 280px;
+  width: 100%;
   padding: 1rem 1.5rem;
 }
