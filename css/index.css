@@ -1,5 +1,5 @@
 .container {
-  --container-max-width: 1440px;
+  --container-max-width: 650px;
   --container-padding-inline: 2rem;
   /* 
   Alterantive CSS to using a max-width container using locally scoped custom properties
@@ -42,7 +42,7 @@
   color: var(--clr-neutral-900, white);
   /* Basic typography changes */
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-family: var(--fontstack-system-mono);
   cursor: pointer;
   /* Size changes */
