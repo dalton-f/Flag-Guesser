@@ -4,7 +4,7 @@ const request = new XMLHttpRequest();
 // Initialize the request with a "GET" request to the REST Countries API
 request.open(
   "GET",
-  "https://restcountries.com/v3.1/all?fields=name,flags,independent"
+  "https://restcountries.com/v3.1/independent?status=true&fields=name,flags"
 );
 
 // Send the initialized request
@@ -14,11 +14,5 @@ request.send();
 request.onload = () => {
   // Parse the JSON response received from the server and store it in the 'result' variable
   const result = JSON.parse(request.response);
-  filterCountries(result);
-};
-
-// Filters out any non-independant territories or otherwise included in the object
-
-const filterCountries = (result) => {
-  result = result.filter((country) => country.independent);
+  console.log(result);
 };
