@@ -14,5 +14,4 @@ request.send();
 request.onload = () => {
   // Parse the JSON response received from the server and store it in the 'result' variable
   const result = JSON.parse(request.response);
-  console.log(result);
 };

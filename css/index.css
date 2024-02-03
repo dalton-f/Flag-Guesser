@@ -37,6 +37,8 @@
   /* Reset default styles */
   border: none;
   appearance: none;
+  text-decoration: none;
+  text-align: center;
   /* Set a better color scheme */
   background: var(--clr-neutral-100, black);
   color: var(--clr-neutral-900, white);
@@ -46,7 +48,7 @@
   font-family: var(--fontstack-system-mono);
   cursor: pointer;
   /* Size changes */
-  max-width: 280px;
+  max-width: 240px;
   width: 100%;
   padding: 1rem 1.5rem;
 }
